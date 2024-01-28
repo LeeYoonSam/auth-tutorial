@@ -44,6 +44,66 @@ Key Features:
 - 🔄 Change user role in Settings page (for development purposes only)
 
 ## Project setup
+프로젝트 생성 - create-next-app
+```bash
+npx create-next-app@latest auth-tutorial
+Need to install the following packages:
+create-next-app@14.1.0
+Ok to proceed? (y) y
+✔ Would you like to use TypeScript? … No / Yes
+✔ Would you like to use ESLint? … No / Yes
+✔ Would you like to use Tailwind CSS? … No / Yes
+✔ Would you like to use `src/` directory? … No / Yes
+✔ Would you like to use App Router? (recommended) … No / Yes
+✔ Would you like to customize the default import alias (@/*)? … No / Yes
+Creating a new Next.js app in /Users/user/Documents/Github/auth-tutorial.
+
+Using npm.
+
+Initializing project with template: app-tw 
+
+
+Installing dependencies:
+- react
+- react-dom
+- next
+
+Installing devDependencies:
+- typescript
+- @types/node
+- @types/react
+- @types/react-dom
+- autoprefixer
+- postcss
+- tailwindcss
+- eslint
+- eslint-config-next
+
+
+added 360 packages, and audited 361 packages in 24s
+
+128 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Initialized a git repository.
+
+Success! Created auth-tutorial at /Users/user/Documents/Github/auth-tutorial
+```
+
+- shadcn-ui 추가
+```bash
+npx shadcn-ui@latest init
+✔ Which style would you like to use? › New York
+✔ Which color would you like to use as base color? › Slate
+✔ Would you like to use CSS variables for colors? … no / yes
+
+✔ Writing components.json...
+✔ Initializing project...
+✔ Installing dependencies...
+
+Success! Project initialization completed. You may now add components.
+```
 
 ### dependencies
 - `npx shadcn-ui@latest add button`
