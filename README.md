@@ -1,11 +1,11 @@
 # [Next Auth V5](https://www.youtube.com/watch?v=1MTyCvS05V4)
-Github & Live Website: https://www.codewithantonio.com/projects/auth-masterclass
-Auth.js: https://authjs.dev/
-Middleware config: https://dub.sh/Apr6dvD
-Resend: https://resend.com/
-Node.js: https://nodejs.org/en
-ShadcnUI: https://ui.shadcn.com/
-Clerk: https://dub.sh/SdVFxFU
+- Github & Live Website: https://www.codewithantonio.com/projects/auth-masterclass
+- Auth.js: https://authjs.dev/
+- Middleware config: https://dub.sh/Apr6dvD
+- Resend: https://resend.com/
+- Node.js: https://nodejs.org/en
+- ShadcnUI: https://ui.shadcn.com/
+- Clerk: https://dub.sh/SdVFxFU
 
 Learn how to add advanced authentication to your NextJS App.
 
