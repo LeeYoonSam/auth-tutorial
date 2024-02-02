@@ -109,6 +109,24 @@ Success! Project initialization completed. You may now add components.
 - `npx shadcn-ui@latest add button`
 
 ## Routing crash course
+- [Routing](https://nextjs.org/docs/pages/building-your-application/routing)
+
+### Index routes
+- 라우터는 인덱스라는 이름의 파일을 디렉토리의 루트로 자동 라우팅합니다.
+
+```
+- pages/index.js → /
+- pages/blog/index.js → /blog
+```
+
+### Nested routes
+- 라우터는 중첩 파일을 지원합니다. 중첩된 폴더 구조를 만들면 파일이 자동으로 동일한 방식으로 라우팅됩니다.
+
+```
+pages/blog/first-post.js → /blog/first-post
+pages/dashboard/settings/username.js → /dashboard/settings/username
+```
+
 ## Home page
 ## Card wrapper
 ## Login form
