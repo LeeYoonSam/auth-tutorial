@@ -108,6 +108,7 @@ Success! Project initialization completed. You may now add components.
 ### dependencies
 - `npx shadcn-ui@latest add button`
 
+
 ## Routing crash course
 - [Routing](https://nextjs.org/docs/pages/building-your-application/routing)
 
@@ -128,6 +129,23 @@ pages/dashboard/settings/username.js → /dashboard/settings/username
 ```
 
 ## Home page
+- app/globals.css 수정
+  - 기본 높이 100% css 추가
+- app/page.tsx 수정
+  - 기본 화면 구성 및 로그인 버튼 추가
+- components/auth/login-button.tsx 생성
+  - 로그인 버튼 래핑 컴포넌트
+  - 클릭 컨트롤
+
+### Note
+Gradient 적용 방법
+```
+<main className="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800">
+```
+- top 쪽은 from-sky-400 부터 아래로 색이 진해짐
+- 양쪽 사이드는 안쪽에서 부터 바깥으로 from-sky-400 -> to-blue-800 으로 진해짐
+
+
 ## Card wrapper
 ## Login form
 ## Register form
