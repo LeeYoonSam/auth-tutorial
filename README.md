@@ -147,6 +147,30 @@ Gradient 적용 방법
 
 
 ## Card wrapper
+카드 형태의 로그인 컴포넌트 구현
+
+- app/auth/login/page.tsx
+  - 로그인 폼
+- app/auth/layout.tsx
+  - 로그인 레이아웃
+- components/auth/login-form.tsx
+  - 로그인 폼 영역 구성
+- components/auth/card-wrapper.tsx
+  - 카드를 감싸는 래퍼
+- components/auth/back-buttons.tsx
+  - 뒤로가기 버튼 컴포넌트
+- components/auth/header.tsx
+  - 헤더 컴포넌트
+- components/auth/social.tsx
+  - 소셜 로그인 버튼
+
+### dependencies
+- npx shadcn-ui@latest add card
+  - 카드 컴포넌트
+- npm i react-icons
+  - 리액트 아이콘 팩
+
+
 ## Login form
 ## Register form
 ## Database & Prisma setup
