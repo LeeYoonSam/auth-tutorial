@@ -165,13 +165,35 @@ Gradient 적용 방법
   - 소셜 로그인 버튼
 
 ### dependencies
-- npx shadcn-ui@latest add card
+- `npx shadcn-ui@latest add card`
   - 카드 컴포넌트
-- npm i react-icons
+- `npm i react-icons`
   - 리액트 아이콘 팩
 
 
 ## Login form
+- schemas/index.ts 추가
+  - zod 스키마 생성
+- components/auth/login-form.tsx 수정
+  - form 추가 및 useForm
+- components/form-error.tsx 추가
+  - form 작성 실패시 보여줄 컴포넌트
+- components/form-success.tsx 추가
+  - form 작성 성공시 보여줄 컴포넌트
+
+### dependencies
+- `npx shadcn-ui@latest add form`
+- `npx shadcn-ui@latest add input`
+
+### Note
+**zod**
+- Zod는 TypeScript와 잘 어울리는 스키마 선언 및 검증 라이브러리입니다.
+- Zod를 사용하면 데이터 타입을 한 번 선언하면 Zod가 자동으로 TypeScript 타입을 추론해줍니다.
+- Zod는 간단한 타입을 복잡한 데이터 구조로 쉽게 조합할 수 있습니다.
+- React Hook Form은 React에서 자주 사용되는 "성능, 유연성, 확장성이 뛰어난 폼 라이브러리"입니다.
+- React Hook Form은 Zod와 함께 사용할 수 있으며, Zod를 통해 폼 데이터의 유효성을 검사할 수 있습니다.
+- Next.js 13에서는 Server Actions라는 새로운 기능이 추가되었는데, 이는 서버에서 폼 데이터를 처리하고 응답을 보내는 데 유용합니다.
+
 ## Register form
 ## Database & Prisma setup
 ## Create user
