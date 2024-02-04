@@ -195,6 +195,19 @@ Gradient 적용 방법
 - Next.js 13에서는 Server Actions라는 새로운 기능이 추가되었는데, 이는 서버에서 폼 데이터를 처리하고 응답을 보내는 데 유용합니다.
 
 ## Register form
+- actions/login.ts 추가
+  - 스키마 유효성 검사에 따라서 성공/실패 메시지 리턴
+- actions/register.ts 추가
+  - 스키마 유효성 검사에 따라서 성공/실패 메시지 리턴
+- components/auth/login-form.tsx 수정
+  - 로그인 action 연결
+  - success, error 연결
+- components/auth/register-form.tsx 추가
+  - 회원가입 폼 컴포넌트
+- schemas/index.ts 수정
+  - RegisterSchema 유효성 검사 추가
+
+
 ## Database & Prisma setup
 ## Create user
 ## Middleware & Login
