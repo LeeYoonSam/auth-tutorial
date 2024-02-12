@@ -209,6 +209,29 @@ Gradient 적용 방법
 
 
 ## Database & Prisma setup
+- lib/db.ts 생성
+  - prisma 클라이언트 생성
+- Prisma 초기 설정
+  - `npx prisma init`
+- Database 연동
+  - 데이터베이스는 [Neon Serverless Postgres](https://neon.tech/) 사용
+  - Neon 프로젝트 생성
+- prisma/schema.prisma 설정
+  - database 정보 설정 (Neon postgre 사용)
+  - model User 생성
+  - `npx prisma generate` - Prisma 클라이언트 스키마 생성
+  - `npx prisma db push` - 데이터베이스에 Prisma 스키마 동기화
+- [auth/prisma-adapter](https://authjs.dev/reference/adapter/prisma) 연결
+  - prisma/schema.prisma 수정
+    - User 수정
+    - model Account 추가
+
+### dependencies
+- `npm i -D prisma`
+- `npm i @prisma/client`
+- `npm i @auth/prisma-adapter`
+
+
 ## Create user
 ## Middleware & Login
 ## Callbacks
