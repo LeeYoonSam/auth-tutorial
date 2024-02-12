@@ -233,6 +233,18 @@ Gradient 적용 방법
 
 
 ## Create user
+- actions/register.ts 수정
+  - 회원가입 데이터베이스 연결
+  - bcryptjs 를 사용해서 비밀번호 hash 처리
+  - 중복 가입 에러 처리
+- data/user.ts 생성
+  - email, id 로 User 데이터를 반환하는 데이터 추가
+
+### dependencies
+- `npm i bcryptjs`
+- `npm i -D @types/bcryptjs`
+
+
 ## Middleware & Login
 ## Callbacks
 ## OAuth(Google & Github)
