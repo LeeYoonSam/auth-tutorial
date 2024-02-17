@@ -246,6 +246,49 @@ Gradient 적용 방법
 
 
 ## Middleware & Login
+### [Auth.js 설치](https://authjs.dev/guides/upgrade-to-v5)
+- `npm install next-auth@beta`
+- auth.ts 생성
+  - https://authjs.dev/guides/upgrade-to-v5#configuration 복사
+- app/api/auth/[...nextauth]/route.ts 생성
+- http://localhost:3000/api/auth/providers 프로바이더 확인
+  - AUTH_SECRET 생성 
+    - `npx auth secret`
+  - .env
+    - 생성된 AUTH_SECRET 추가
+- [middleware 추가](https://authjs.dev/reference/nextjs#in-middleware)
+  - middleware.ts 생성
+- [Edge compatibility](https://authjs.dev/guides/upgrade-to-v5#edge-compatibility)
+  - 인증 구성 분할
+  - NextAuth.js는 두 가지 세션 전략을 지원합니다. 어댑터를 사용하는 경우 세션 데이터를 데이터베이스에 저장하도록 선택할 수 있습니다. 데이터베이스 및 해당 어댑터가 Edge 런타임/인프라와 호환되지 않는 한 "데이터베이스" 세션 전략을 사용할 수 없습니다.
+  - `auth.config.ts` 생성
+    - next-auth 에서 제공하는 credentila 함수의 authorize 콜백을 통해서 DB 의 유저 정보와 비밀번호가 일치하는지 검증
+  - `auth.ts` 수정
+    - authConfig, PrismaAdapter 를 사용해서 인증하도록 수정
+    - `npm i @auth/prisma-adapter` 어댑터 설치
+  - 미들웨어가 엣지와 호환되지 않는 어댑터로 가져오기를 사용하고 있지 않은지 확인합니다:
+    ```
+    - export { auth as middleware } from './auth'
+    + import authConfig from "./auth.config"
+    + import NextAuth from "next-auth"
+    + export const { auth: middleware } = NextAuth(authConfig)
+    ```
+- `app/(protected)/settings/page.tsx` 생성
+  - 인증 테스트 페이지 추가
+- `routes.ts` 생성
+  - publicRoutes, apiRoutes 등 route 관련 정보 제공
+  - `middleware.ts` 수정
+    - auth 콜백 수정
+      - 로그인 유무에 따라서 리디렉트 처리
+- `auth.ts` 수정
+  - signIn, signOut 추가
+- `actions/login.ts` 수정
+  - 로그인 액션에 next-auth 의 signIn 에 credentials 프로바이더로 로그인 처리
+  - 로그인 후 settings 페이지 리디렉트
+- `app/(protected)/settings/page.tsx` 수정
+  - 로그아웃 구현
+  - 로그아웃 후 로그인 페이지 리디렉트
+
 ## Callbacks
 ## OAuth(Google & Github)
 ## Resend(Sending emails)
