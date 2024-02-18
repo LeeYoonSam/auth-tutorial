@@ -289,7 +289,24 @@ Gradient 적용 방법
   - 로그아웃 구현
   - 로그아웃 후 로그인 페이지 리디렉트
 
-## Callbacks
+## [Callbacks](https://authjs.dev/guides/basics/callbacks)
+- `auth.ts` 수정
+  - NextAuth Callbacks 추가
+    - session, jwt
+- `prisma/schema.prisma` 수정
+  - UserRole 추가 (ADMIN, USER)
+  - `npx prisma generate`
+  - `npx prisma migrate reset`
+  - `npx prisma db push`
+- `next-auth.d.ts` 생성
+  - [next-auth type 확장](https://authjs.dev/getting-started/typescript)
+
+### Note
+**NextAuth - Callbacks**
+- 콜백은 동작이 수행될 때 발생하는 상황을 제어하는 데 사용할 수 있는 비동기 함수입니다.
+- 콜백은 데이터베이스 없이 액세스 제어를 구현하고 외부 데이터베이스 또는 API와 통합할 수 있기 때문에 특히 JSON 웹 토큰과 관련된 시나리오에서 매우 강력합니다.
+
+
 ## OAuth(Google & Github)
 ## Resend(Sending emails)
 ## Email verification
