@@ -318,7 +318,17 @@ Gradient 적용 방법
     - Google 에서 [OAuth 설정 후 키 가져오기](#google-oauth-설정)
 - `components/auth/social.tsx` 수정
   - 소셜 로그인을 지원하도록 소셜 로그인 버튼 onClick 수정
-
+- [소셜 계정과 데이터베이스의 사용자와의 연결](https://authjs.dev/guides/basics/events#linkaccount)
+  - `auth.ts` 수정
+    - events: linkAccount 추가
+      - 데이터베이스 `emailVerifed` 필드 데이터 채워짐
+    - pages 추가
+      - 로그인, 에러 path 지정
+      - `app/auth/error/page.tsx` 에러 페이지 추가
+        - `components/auth/error-card.tsx` 에러 컴포넌트 카드 추가
+- `components/auth/login-form.tsx` 수정
+  - 소셜 계정 이메일 중복시 에러 추가 (**OAuthAccountNotLinked 에러**)
+    
 ### GitHub OAuth 설정
 - GitHub(login) > Settings > Developer Settings > OAuth Apps > Register a new application
   - Application name: auth-tutorial
