@@ -316,7 +316,8 @@ Gradient 적용 방법
     - GitHub 에서 [OAuth 설정 후 키 가져오기](#github-oauth-설정)
   - providers Google clientId, clientSecret 추가
     - Google 에서 [OAuth 설정 후 키 가져오기](#google-oauth-설정)
-
+- `components/auth/social.tsx` 수정
+  - 소셜 로그인을 지원하도록 소셜 로그인 버튼 onClick 수정
 
 ### GitHub OAuth 설정
 - GitHub(login) > Settings > Developer Settings > OAuth Apps > Register a new application
@@ -342,8 +343,13 @@ Gradient 적용 방법
     - Authorized redirect URIs: http://localhost:3000/api/auth/callback/google
       - `http://localhost:3000/api/auth/providers` 여기서 google callbackUrl 을 복사
 - OAuth client created - Client ID, Client secret 만들기 완료
+- 테스트를 하기 위해서는 **테스트 사용자** 추가 필요
 
-
+### Note
+**OAuthAccountNotLinked 에러 발생(소셜 로그인 이메일 중복)**
+- Social 계정으로 로그인 시 같은 이메일을 사용할 경우 `OAuthAccountNotLinked` 에러가 발생
+  - 따로 처리하려면 별도의 페이지를 구현해서 처리
+  - 테스트시에는 디비에 데이터를 삭제 후 테스트
 
 
 ## Resend(Sending emails)
