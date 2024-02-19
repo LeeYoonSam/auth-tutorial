@@ -307,7 +307,45 @@ Gradient 적용 방법
 - 콜백은 데이터베이스 없이 액세스 제어를 구현하고 외부 데이터베이스 또는 API와 통합할 수 있기 때문에 특히 JSON 웹 토큰과 관련된 시나리오에서 매우 강력합니다.
 
 
-## OAuth(Google & Github)
+## OAuth(Google & GitHub)
+- `auth.config.ts` 수정
+  - Provider 에 GitHub, Google 프로바이더 추가
+    - clientId, clientSecret 추가(`.env` 에 설정 값을 추가)
+  - `http://localhost:3000/api/auth/providers` 프로바이더 확인
+  - providers GitHub clientId, clientSecret 추가
+    - GitHub 에서 [OAuth 설정 후 키 가져오기](#github-oauth-설정)
+  - providers Google clientId, clientSecret 추가
+    - Google 에서 [OAuth 설정 후 키 가져오기](#google-oauth-설정)
+
+
+### GitHub OAuth 설정
+- GitHub(login) > Settings > Developer Settings > OAuth Apps > Register a new application
+  - Application name: auth-tutorial
+  - Homepage URL: http://localhost:3000
+  - Authorization callback URL: http://localhost:3000/api/auth/callback/github
+    - `http://localhost:3000/api/auth/providers` 여기서 github callbackUrl 을 복사
+- 새로운 어플리케이션이 생성되면 clientId를 받을 수 있습니다.
+- Client secrets > Generate a new client secret 으로 Secret 생성
+
+### Google OAuth 설정
+- google api console 검색
+- 상단 프로젝트 선택 > 새 프로젝트 > 프로젝트 생성
+- APIs & Services 검색 or 메뉴 클릭 > OAuth consent screen(OAuth 동의 화면)
+  - External(외부) 타입 선택 > 만들기
+  - 앱 이름, 사용자 지원 이메일, 개발자 연락처 정보 등 필수 정보 입력 후 진행
+  - 나머지 단계는 별다른 입력없이 통과
+- Credentials
+  - CREATE CREDENTIALS > OAuth client ID
+    - Application type: Web application
+    - Name: web client 1
+    - Authorized JavaScript origins: http://localhost:3000
+    - Authorized redirect URIs: http://localhost:3000/api/auth/callback/google
+      - `http://localhost:3000/api/auth/providers` 여기서 google callbackUrl 을 복사
+- OAuth client created - Client ID, Client secret 만들기 완료
+
+
+
+
 ## Resend(Sending emails)
 ## Email verification
 ## Reset password email
