@@ -363,6 +363,34 @@ Gradient 적용 방법
 
 
 ## Resend(Sending emails)
+- prisma/schema.prisma 수정
+  - VerificationToken 모델 추가
+- data/verification-token.ts 생성
+  - 데이터베이스에서 email, token 으로 verification token 가져오기
+- lib/tokens.ts 생성
+  - 새로운 토큰 생성(기존 토큰이 있으면 삭제)
+  - `npm i uuid` 설치
+  - `from "uuid"` 를 사용하기 위해 `npm i --save-dev @types/uuid` 설치
+- actions/register.ts 수정
+  - 회원 가입시 인증 토큰 생성
+- actions/login.ts 수정
+  - 로그인시 이메일 인증이 안되어 있을 경우 토큰 재생성 후 메시지만 전달
+- lib/mail.ts 생성
+  - **resend** 를 사용해서 이메일 전송(토큰 인증)
+- actions/register.ts | actions/login.ts 수정
+  - 회원가입/로그인 시 이메일 전송
+
+### [Resend](https://resend.com/)
+- 이메일 전송 서비스
+- 회원가입 > 팀 만들기 > API Key 추가
+- `npm install resend` 설치
+- `.env` RESEND_API_KEY 추가
+
+### dependencies
+- `npm i uuid`
+- `npm i --save-dev @types/uuid`
+
+
 ## Email verification
 ## Reset password email
 ## Reset password form
