@@ -392,6 +392,22 @@ Gradient 적용 방법
 
 
 ## Email verification
+- `routes.ts` 수정
+  - public routes 에 이메일 인증시 사용하는 경로 추가
+- `app/auth/new-verification/page.tsx` 생성
+  - 이메일 인증 페이지
+- `components/auth/new-verification-form.tsx` 생성
+  - 이메일 인증 폼
+  - searchParmas 의 token 으로 자동 인증 처리
+  - success, error 메시지 처리
+- `actions/new-verification.ts` 생성
+  - 데이터베이스 토큰 정보에 따라 유효성 체크
+  - 유효한 토큰이면 유저정보 업데이트
+
+### dependencies
+- `npm i react-spinners`
+
+
 ## Reset password email
 ## Reset password form
 ## Two factor authentication
