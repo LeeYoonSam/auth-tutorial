@@ -409,6 +409,32 @@ Gradient 적용 방법
 
 
 ## Reset password email
+- `components/auth/login-form.tsx` 수정
+  - 비밀번호 재설정 버튼 추가
+  - 비밀번호 재설정 화면 이동
+- `routes.ts` 수정
+  - authRoutes 에 비밀번호 재설정 path 추가
+- `app/auth/reset/page.tsx` 생성
+  - 비밀번호 재설정 화면
+- `components/auth/reset-form.tsx` 생성
+  - 비밀번호 재설정 폼
+- `schemas/index.ts` 수정
+  - ResetSchema 추가
+- `actions/reset.ts` 생성
+  - 이메일 재전송을 위한 액션
+  - 이메일 유효성 체크
+  - 이메일 재전송
+- `prisma/schema.prisma` 수정
+  - PasswordResetToken 모델 추가
+- `data/password-reset-token.ts` 생성
+  - 데이터베이스에서 passwordResetToken 모델의 데이터를 가져오는 역할
+- `lib/tokens.ts` 수정
+  - passwordResetToken 에서 사용 할 토큰 및 유효기간 데이터 생성
+  - 데이터베이스 토큰 데이터 최신화
+- `lib/mail.ts` 수정
+  - 패스워드 재설정 이메일 발송 추가
+
+
 ## Reset password form
 ## Two factor authentication
 ## User button

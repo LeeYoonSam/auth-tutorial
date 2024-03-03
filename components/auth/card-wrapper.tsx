@@ -1,9 +1,9 @@
 "use client";
 
-import { 
-  Card, 
-  CardContent, 
-  CardFooter, 
+import {
+  Card,
+  CardContent,
+  CardFooter,
   CardHeader
 } from "@/components/ui/card";
 import { Header } from "@/components/auth/header";
@@ -33,9 +33,11 @@ export const CardWrapper = ({
       <CardContent>
         {children}
       </CardContent>
-      <CardFooter>
-        <Social />
-      </CardFooter>
+      {showSocial && (
+        <CardFooter>
+          <Social />
+        </CardFooter>
+      )}
       <CardFooter>
         <BackButton
           label={backButtonLabel}
