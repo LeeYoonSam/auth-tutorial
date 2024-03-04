@@ -436,6 +436,19 @@ Gradient 적용 방법
 
 
 ## Reset password form
+- routes.ts 수정
+  - authRoutes 에 `/auth/new-password` 추가
+- `app/auth/new-password/page.tsx` 생성
+  - 패스워드 재설정 화면
+- `components/auth/new-password-form.tsx` 생성
+  - 패스워드 재설정 화면 폼
+- `schemas/index.ts` 수정
+  - NewPasswordSchema 추가
+- `actions/new-password.ts` 생성
+  - 비밀번호 재설정 화면에서 사용 할 버튼 액션
+  - 유효성 체크(길이, 토큰 만료, 토큰 파라미터 등)
+  - 데이터베이스 유저 업데이트, 사용 한 토큰 제거
+
 ## Two factor authentication
 ## User button
 ## Server & Client example
