@@ -450,6 +450,33 @@ Gradient 적용 방법
   - 데이터베이스 유저 업데이트, 사용 한 토큰 제거
 
 ## Two factor authentication
+- `prisma/schema.prisma` 수정
+  - TwoFactorConfirmation 모델 추가
+  - TwoFactorToken 모델 추가
+  - User 모델에 twoFactor 관련 필드 추가
+  - prisma
+    - `npx prisma generate`
+    - `npx prisma migrate reset`
+    - `npx prisma db push`
+- `data/two-factor-token.ts` 생성
+  - token, email 로 2단계 토큰 정보 가져옴
+- `data/two-factor-confirmation.ts` 생성
+  - 데이터베이스에서 2단계 인증 정보 가져옴
+- `lib/tokens.ts` 수정
+  - 2 단계 인증에서 사용할 토큰 생성
+  - crypto 내장 함수 사용해서 토큰 생성
+- `lib/mail.ts` 수정
+  - 2단계 인증 메일 전송
+- `auth.ts` 수정
+  - signIn 콜백에 2FA 인증 업데이트
+- `actions/login.ts` 수정
+  - 로그인시 2FA 활성 상태 체크 후 분기
+  - 2FA 데이터베이스 정보 삭제 및 예외처리 추가
+- `components/auth/login-form.tsx` 수정
+  - 2FA 활성/비활성화 UI 변경
+  - 2FA 활성 상태일경우 이메일로 코드를 받아서 로그인
+
+
 ## User button
 ## Server & Client example
 ## Admin example
