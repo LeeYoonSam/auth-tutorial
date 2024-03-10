@@ -478,6 +478,30 @@ Gradient 적용 방법
 
 
 ## User button
+- app/(protected)/settings/page.tsx 수정
+  - useSession 훅을 통해서 세션 정보를 가져오도록 수정
+- app/layout.tsx 수정
+  - Root 에 SessionProvider 추가 session 정보 세팅
+- actions/logout.ts 생성
+  - 로그아웃 처리
+- app/(protected)/layout.tsx 생성
+  - navbar 를 가진 상위 레이아웃 추가
+- app/(protected)/_components/navbar.tsx 생성
+  - 설정 메뉴 네비게이션 버튼
+- hooks/use-current-user.ts 생성
+  - useSession 으로 현재 유저 정보를 가져오는 훅 생성
+- components/auth/logout-button.tsx 생성
+  - 로그아웃 컴포넌트
+- components/auth/user-button.tsx 생성
+  - 유저 아바타 컴포넌트
+  - 드롭다운 메뉴 구현
+    - 로그아웃
+
+### dependencies
+- `npx shadcn-ui@latest add dropdown-menu`
+- `npx shadcn-ui@latest add avatar`
+
+
 ## Server & Client example
 ## Admin example
 ## Settings page
