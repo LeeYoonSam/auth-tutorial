@@ -503,6 +503,24 @@ Gradient 적용 방법
 
 
 ## Server & Client example
+- `app/(protected)/server/page.tsx` 생성
+  - 네비게이션 Server 에서 보여줄 유저 정보 화면
+- `components/user-info.tsx` 생성
+  - 유저 정보 컴포넌트
+  - shadcn-ui Badge 추가
+    - variant.success 타입 추가
+- `auth.ts` 수정
+  - jwt: 토큰 정보에 isTwoFactorEnabled 정보 전달
+  - session: 토큰 정보로 session.user.isTwoFactorEnabled 설정
+- `next-auth.d.ts` 수정
+  - ExtendedUser.isTwoFactorEnabled 추가
+- `app/(protected)/client/page.tsx` 생성
+  - 서버와 동일한 컴포넌트를 복사해서 Client 유저 정보 화면 추가
+
+### dependencies
+- `npx shadcn-ui@latest add badge`
+
+
 ## Admin example
 ## Settings page
 ## Sponsor demo
