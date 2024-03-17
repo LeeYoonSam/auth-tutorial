@@ -43,6 +43,16 @@ Key Features:
 - 🔔 Enable/disable two-factor auth in Settings page
 - 🔄 Change user role in Settings page (for development purposes only)
 
+## 폴더 및 파일 요약
+- actions: "use server" 로 비동기 작업시 실행 할 액션
+- libs: 서버 사이드에서 사용 할 비동기 작업
+- hooks: 클라이언트 사이드에서 사용 할 hook
+- routes.ts: public, auth 등등 Route 관리
+- next-auth.d.ts: next-auth 에서 사용 하는 session 커스텀
+- middleware.ts: 인증 시 리디렉트 관리
+- auth.ts: 로그인, 세션, 인증 처리
+- auth.config.ts: 인증 프로바이더 제공 및 인증 로직
+
 ## Project setup
 프로젝트 생성 - create-next-app
 ```bash
@@ -522,6 +532,24 @@ Gradient 적용 방법
 
 
 ## Admin example
+- `app/(protected)/admin/page.tsx` 생성
+  - 관리자만 사용하는 화면
+  - role-gate 로 권한 메시지 표시
+  - 관리자용 액션 생성
+- `hooks/use-current-role.ts` 생성
+  - role 가져오는 hook 생성
+- `components/auth/role-gate.tsx` 생성
+  - 권한 메시지 컴포넌트
+- `app/api/admin/route.ts` 생성
+  - 관리자가 사용 할 API
+- `app/layout.tsx` 수정
+  - 상위에 <Toaster /> 추가 (sonner)
+
+
+### dependencies
+- `npx shadcn-ui@latest add sonner` : toast
+
+
 ## Settings page
 ## Sponsor demo
 ## Deployment

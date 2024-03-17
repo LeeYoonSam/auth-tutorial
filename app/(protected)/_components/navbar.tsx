@@ -39,7 +39,7 @@ export const Navbar = () => {
 
         <Button
           asChild
-          variant={pathname === "/admin" ? "default" : "outline"}
+          variant={pathname === "/settings" ? "default" : "outline"}
         >
           <Link href="/settings">
             Settings
