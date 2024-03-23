@@ -551,5 +551,24 @@ Gradient 적용 방법
 
 
 ## Settings page
+- `schemas/index.ts` 수정
+  - SettingsSchema 추가 
+- `app/(protected)/settings/page.tsx` 수정
+  - 카드 형태 컴포넌트 추가
+  - 유저 이름 업데이트
+- `actions/settings.ts` 생성
+  - 세션에 저장된 유저정보를 가져와서 디비 유저 정보 조회 후 name 업데이트
+- `auth.ts` 수정
+  - jwt 인증에 토큰 정보(name, email) 추가
+- `data/account.ts` 생성
+  - 유저 계정 정보를 가져오는 API
+- `next-auth.d.ts` 수정
+  - isOAuth 필드 추가
+
+### dependencies
+- npx shadcn-ui@latest add switch
+- npx shadcn-ui@latest add select
+
+
 ## Sponsor demo
 ## Deployment
