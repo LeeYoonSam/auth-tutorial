@@ -44,8 +44,9 @@ Key Features:
 - 🔄 Change user role in Settings page (for development purposes only)
 
 ## 폴더 및 파일 요약
-- actions: "use server" 로 비동기 작업시 실행 할 액션
-- libs: 서버 사이드에서 사용 할 비동기 작업
+- actions: "use server" 로 서버 사이드 기반 비동기 작업시 실행 할 액션
+- libs: 자주 사용하는 기능들을 라이브러리화
+- data: 디비 정보를 이용해서 데이터 제공
 - hooks: 클라이언트 사이드에서 사용 할 hook
 - routes.ts: public, auth 등등 Route 관리
 - next-auth.d.ts: next-auth 에서 사용 하는 session 커스텀
@@ -569,6 +570,4 @@ Gradient 적용 방법
 - npx shadcn-ui@latest add switch
 - npx shadcn-ui@latest add select
 
-
-## Sponsor demo
 ## Deployment
