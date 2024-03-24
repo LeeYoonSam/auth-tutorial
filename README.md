@@ -585,5 +585,8 @@ Gradient 적용 방법
 - lib/mail.ts 수정
   - 하드코딩 도메인 변경
 
+### 배포 후 작업
+- GitHub, Google API Authorized domain 변경
+
 ### dependencies
 - `npx shadcn-ui@latest add dialog`
