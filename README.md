@@ -567,7 +567,23 @@ Gradient 적용 방법
   - isOAuth 필드 추가
 
 ### dependencies
-- npx shadcn-ui@latest add switch
-- npx shadcn-ui@latest add select
+- `npx shadcn-ui@latest add switch`
+- `npx shadcn-ui@latest add select`
 
 ## Deployment
+- Dialog 추가
+- actions/login.ts 수정
+  - 콜백 URL 리디렉트 적용
+- `middleware.ts` 생성
+  - 콜백 URL 추가
+- `components/auth/login-button.tsx` 수정
+  - modal Dialog 지원
+- `components/auth/login-form.tsx` 수정
+  - 로그인 액션 수정
+- components/auth/social.tsx 수정
+  - 콜백 URL 받아서 처리
+- lib/mail.ts 수정
+  - 하드코딩 도메인 변경
+
+### dependencies
+- `npx shadcn-ui@latest add dialog`
